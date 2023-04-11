@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+  <div class="container">
+    <div class= "row row-cols-auto">
+
+    {% for posts in post %}
+    <div class="col-md">
+        <div class="card" style="width: 18rem;">
+            <img src="{{posts.imagen_portada.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{posts.title}}</h5>
+              <p class="card-text">{{posts.subtitulo}}</p>
+              <a href="{% url 'post' posts.id %}" class="btn btn-outline-primary">Leer mas</a>
+            </div>
+        </div>
+      </div>
+    {% endfor %}
+
+    </div>
+
+  </div>
+
+{% endblock content %}
+
+
+
+      
+
